@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reagan | @JankyGlamour — Stripper, Performer, Activist</title>
-    <meta name="description" content="Los Angeles-based stripper, performer, and sex worker rights activist. 14 years of Janky Glamour.">
+    <title>Reagan | @JankyGlamour — The Most Wholesome Stripper in Town</title>
+    <meta name="description" content="Los Angeles-based stripper, performer, and sex worker rights activist since 2007. The Most Wholesome Stripper in Town! Star Garden union organizer.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -23,358 +18,227 @@
             --blush-pink: #FFC0CB;
             --gold: #D4AF37;
             --champagne: #F7E7CE;
-            --black: #1a1a1a;
+            --black: #0a0a0a;
         }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--champagne);
-            overflow-x: hidden;
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--champagne); color: var(--black); overflow-x: hidden; margin: 0; padding: 0; }
+        .font-glamour { font-family: 'Playfair Display', serif; }
+        .font-janky { font-family: 'Caveat', cursive; }
+        .text-gold { color: var(--gold); }
+        .text-hot-pink { color: var(--hot-pink); }
+        .bg-hot-pink { background-color: var(--hot-pink); }
+        .bg-champagne { background-color: var(--champagne); }
+        .border-gold { border-color: var(--gold); }
+        .border-hot-pink { border-color: var(--hot-pink); }
+
+        .btn-rhinestone {
+            background: linear-gradient(135deg, var(--gold) 0%, #FFD700 50%, #F4C430 75%, var(--gold) 100%);
+            border: 3px solid var(--hot-pink);
+            box-shadow: 0 0 0 2px var(--gold), 0 4px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.6), 0 0 20px rgba(212,175,55,0.4);
+            position: relative; overflow: hidden; transition: all 0.3s ease;
         }
-        
-        .font-glamour {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .font-janky {
-            font-family: 'Caveat', cursive;
-        }
-        
-        .text-gold {
-            color: var(--gold);
-        }
-        
-        .bg-hot-pink {
-            background-color: var(--hot-pink);
-        }
-        
-        .text-hot-pink {
-            color: var(--hot-pink);
-        }
-        
-        .border-gold {
-            border-color: var(--gold);
-        }
-        
-        /* Glitter Animation */
-        @keyframes glitter {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        
-        .glitter {
-            animation: glitter 2s infinite;
-        }
-        
+        .btn-rhinestone:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 0 2px var(--gold), 0 8px 25px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.8), 0 0 30px rgba(255,20,147,0.3); }
+        .btn-rhinestone::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%); transform: rotate(45deg); transition: all 0.6s; }
+        .btn-rhinestone:hover::before { left: 100%; }
+
+        .btn-onlyfans { background: var(--hot-pink); border: 2px solid var(--gold); color: white; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.05em; transition: all 0.3s ease; }
+        .btn-onlyfans:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,20,147,0.3); }
+
+        @keyframes glitter { 0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); } 50% { opacity: 1; transform: scale(1.3) rotate(180deg); } }
+        .glitter { animation: glitter 2.5s infinite ease-in-out; display: inline-block; }
         .glitter-delay-1 { animation-delay: 0.5s; }
         .glitter-delay-2 { animation-delay: 1s; }
         .glitter-delay-3 { animation-delay: 1.5s; }
-        
-        /* Tape Effect */
-        .tape {
-            background: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-            transform: rotate(-2deg);
-            backdrop-filter: blur(2px);
-        }
-        
-        /* Polaroid Style */
-        .polaroid {
-            background: white;
-            padding: 1rem;
-            padding-bottom: 3rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transform: rotate(-3deg);
-            transition: transform 0.3s ease;
-        }
-        
-        .polaroid:hover {
-            transform: rotate(0deg) scale(1.05);
-            z-index: 10;
-        }
-        
-        .polaroid:nth-child(even) {
-            transform: rotate(2deg);
-        }
-        
-        .polaroid:nth-child(even):hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-        
-        /* Rhinestone Button Effect */
-        .btn-rhinestone {
-            background: linear-gradient(135deg, var(--gold) 0%, #FFD700 50%, var(--gold) 100%);
-            border: 3px solid var(--hot-pink);
-            box-shadow: 
-                0 0 0 2px var(--gold),
-                0 4px 6px rgba(0,0,0,0.3),
-                inset 0 2px 4px rgba(255,255,255,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-rhinestone::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(255,255,255,0.3) 50%,
-                transparent 70%
-            );
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-        
-        .btn-rhinestone:hover::before {
-            left: 100%;
-        }
-        
-        /* Scribble Underline */
-        .scribble-underline {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .scribble-underline::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 100%;
-            height: 8px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q 25 10, 50 5 T 100 5' stroke='%23FF1493' stroke-width='3' fill='none'/%3E%3C/svg%3E") no-repeat center;
-            background-size: 100% 100%;
-        }
-        
-        /* Marquee */
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-        }
-        
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        /* Noise Texture Overlay */
-        .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        
-        /* Ripped Edge Effect */
-        .ripped-edge {
-            position: relative;
-        }
-        
-        .ripped-edge::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: linear-gradient(45deg, transparent 33.333%, var(--champagne) 33.333%, var(--champagne) 66.667%, transparent 66.667%),
-                        linear-gradient(-45deg, transparent 33.333%, var(--champagne) 33.333%, var(--champagne) 66.667%, transparent 66.667%);
-            background-size: 20px 40px;
-            background-position: 0 -20px;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--champagne);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--hot-pink);
-            border: 2px solid var(--gold);
-            border-radius: 6px;
-        }
-        
-        /* Mobile Optimizations */
+        .glitter-delay-4 { animation-delay: 2s; }
+
+        .polaroid { background: white; padding: 0.75rem; padding-bottom: 2.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); transform: rotate(-2deg); transition: all 0.3s ease; border: 1px solid #e5e5e5; }
+        .polaroid:hover { transform: rotate(0deg) scale(1.03); z-index: 10; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
+        .polaroid:nth-child(even) { transform: rotate(1.5deg); }
+        .polaroid:nth-child(even):hover { transform: rotate(0deg) scale(1.03); }
+        .polaroid:nth-child(3n) { transform: rotate(-1deg); }
+        .polaroid:nth-child(3n):hover { transform: rotate(0deg) scale(1.03); }
+
+        .photo-placeholder { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); font-weight: 500; }
+        .photo-placeholder.pink { background-color: var(--hot-pink); }
+        .photo-placeholder.gold { background-color: var(--gold); color: rgba(0,0,0,0.4); }
+        .photo-placeholder.blush { background-color: var(--blush-pink); color: rgba(0,0,0,0.4); }
+
+        .scribble-underline { position: relative; display: inline-block; }
+        .scribble-underline::after { content: ''; position: absolute; left: -5%; bottom: -8px; width: 110%; height: 12px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q 15 12, 30 6 T 60 6 T 90 6 T 120 6' stroke='%23FF1493' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center; background-size: 100% 100%; opacity: 0.8; }
+
+        .marquee-container { overflow: hidden; white-space: nowrap; background: var(--hot-pink); border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: white; text-transform: uppercase; letter-spacing: 0.15em; padding: 1rem 0; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+
+        .tape { background: rgba(255,255,255,0.35); box-shadow: 0 2px 4px rgba(0,0,0,0.1); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); }
+
+        .zine-card { background: white; border: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: rotate(-1deg); transition: all 0.3s ease; position: relative; }
+        .zine-card::before { content: ''; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 30%; height: 20px; background: rgba(255,215,0,0.3); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .zine-card:hover { transform: rotate(0deg) translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .zine-card:nth-child(2) { transform: rotate(1.5deg); }
+        .zine-card:nth-child(2):hover { transform: rotate(0deg) translateY(-5px); }
+        .zine-card:nth-child(3) { transform: rotate(-2deg); }
+        .zine-card:nth-child(3):hover { transform: rotate(0deg) translateY(-5px); }
+
+        .press-card { background: white; border: 2px solid #e5e5e5; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: all 0.3s ease; position: relative; }
+        .press-card::after { content: ''; position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; background: var(--gold); border-radius: 50%; opacity: 0.3; }
+        .press-card:hover { border-color: var(--hot-pink); box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-3px); }
+
+        ::selection { background: var(--hot-pink); color: white; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--champagne); }
+        ::-webkit-scrollbar-thumb { background: var(--hot-pink); border: 2px solid var(--gold); border-radius: 5px; }
+
+        .section-dark { background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%); position: relative; overflow: hidden; }
+        .section-dark::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212,175,55,0.03) 35px, rgba(212,175,55,0.03) 70px); }
+
+        #mobileMenu { transition: all 0.3s ease; }
+
         @media (max-width: 768px) {
-            .polaroid {
-                transform: rotate(-1deg);
-            }
+            .polaroid { transform: rotate(-1deg) !important; }
+            .polaroid:hover { transform: rotate(0deg) scale(1.02) !important; }
+            .zine-card { transform: rotate(0deg) !important; }
+            .marquee-content { font-size: 1rem; animation-duration: 20s; }
         }
+
+        @keyframes pulse-subtle { 0%, 100% { box-shadow: 0 10px 25px rgba(255,20,147,0.4); } 50% { box-shadow: 0 10px 35px rgba(255,20,147,0.6), 0 0 20px rgba(212,175,55,0.3); } }
+        .animate-pulse-subtle { animation: pulse-subtle 2s ease-in-out infinite; }
+        #stickyOFBtn { transition: opacity 0.3s ease, transform 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="text-gray-900">
-
-    <!-- Noise Texture -->
+<body class="antialiased">
     <div class="noise"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b-4 border-hot-pink z-50 px-4 py-3">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b-4 border-hot-pink z-50 px-4 py-3 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="font-glamour font-black text-2xl md:text-3xl text-hot-pink tracking-tighter">
+            <a href="#" class="font-glamour font-black text-2xl md:text-3xl text-hot-pink tracking-tighter hover:opacity-80 transition-opacity">
                 JANKY<span class="text-gold">GLAMOUR</span>
             </a>
-            <div class="flex items-center gap-4">
-                <a href="https://instagram.com" target="_blank" class="text-hot-pink hover:text-gold transition-colors">
-                    <i data-lucide="instagram" class="w-6 h-6"></i>
+            <div class="flex items-center gap-3">
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="btn-onlyfans px-3 py-1.5 rounded-full text-xs md:text-sm uppercase tracking-wider hidden sm:block">🔒 OnlyFans</a>
+                <a href="https://instagram.com/jankyglamour" target="_blank" class="text-hot-pink hover:text-gold transition-colors p-2">
+                    <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6"></i>
                 </a>
-                <button class="md:hidden text-hot-pink" onclick="toggleMenu()">
+                <button class="md:hidden text-hot-pink p-2" onclick="toggleMenu()" aria-label="Toggle menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
+                <div class="hidden md:flex items-center gap-6 ml-4 font-glamour text-sm uppercase tracking-widest">
+                    <a href="#about" class="text-black hover:text-hot-pink transition-colors">About</a>
+                    <a href="#star-garden" class="text-black hover:text-hot-pink transition-colors">Star Garden</a>
+                    <a href="#press" class="text-black hover:text-hot-pink transition-colors">Press</a>
+                    <a href="#activism" class="text-black hover:text-hot-pink transition-colors">Activism</a>
+                    <a href="#contact" class="text-black hover:text-hot-pink transition-colors">Contact</a>
+                </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t-2 border-hot-pink/20 pt-4">
-            <a href="#about" class="block py-2 font-glamour text-lg text-hot-pink">About</a>
-            <a href="#activism" class="block py-2 font-glamour text-lg text-hot-pink">Activism</a>
-            <a href="#gallery" class="block py-2 font-glamour text-lg text-hot-pink">Gallery</a>
-            <a href="#contact" class="block py-2 font-glamour text-lg text-hot-pink">Contact</a>
+            <a href="#about" class="block py-3 font-glamour text-lg text-hot-pink border-b border-gray-100">About</a>
+            <a href="#star-garden" class="block py-3 font-glamour text-lg text-hot-pink border-b border-gray-100">Star Garden</a>
+            <a href="#press" class="block py-3 font-glamour text-lg text-hot-pink border-b border-gray-100">Press</a>
+            <a href="#activism" class="block py-3 font-glamour text-lg text-hot-pink border-b border-gray-100">Activism</a>
+            <a href="#gallery" class="block py-3 font-glamour text-lg text-hot-pink border-b border-gray-100">Gallery</a>
+            <a href="#contact" class="block py-3 font-glamour text-lg text-hot-pink">Contact</a>
+            <div class="mt-4 pt-4 border-t border-gray-200 flex gap-3 flex-wrap">
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="btn-onlyfans px-4 py-2 rounded-full text-sm uppercase tracking-wider inline-block">🔒 OnlyFans</a>
+                <a href="https://hidden.com/jankyglamour/" target="_blank" rel="noopener" class="btn-onlyfans px-4 py-2 rounded-full text-sm uppercase tracking-wider inline-block">🤫 Hidden.com</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-10 px-4 overflow-hidden bg-gradient-to-br from-pink-100 via-champagne to-yellow-50">
-        <!-- Decorative Elements -->
-        <div class="absolute top-20 left-10 w-32 h-32 bg-hot-pink/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-48 h-48 bg-yellow-400/20 rounded-full blur-3xl"></div>
-        
-        <!-- Glitter Particles -->
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden bg-gradient-to-br from-pink-50 via-champagne to-yellow-50">
+        <div class="absolute top-32 left-10 w-40 h-40 bg-hot-pink/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-32 right-10 w-56 h-56 bg-gold/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/3 w-32 h-32 bg-blush-pink/30 rounded-full blur-2xl"></div>
         <div class="absolute top-1/4 left-1/4 text-gold glitter text-4xl">✦</div>
         <div class="absolute top-1/3 right-1/3 text-hot-pink glitter glitter-delay-1 text-2xl">✧</div>
         <div class="absolute bottom-1/3 left-1/3 text-gold glitter glitter-delay-2 text-3xl">✦</div>
         <div class="absolute top-2/3 right-1/4 text-hot-pink glitter glitter-delay-3 text-2xl">✧</div>
+        <div class="absolute bottom-1/4 left-1/2 text-gold glitter glitter-delay-4 text-xl">✦</div>
 
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <!-- Janky Handwritten Label -->
-            <div class="font-janky text-3xl md:text-5xl text-hot-pink transform -rotate-6 mb-4 inline-block">
-                meet your new obsession...
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="font-janky text-3xl md:text-5xl text-hot-pink transform -rotate-3 mb-2 inline-block font-semibold">meet your new obsession...</div>
+            <h1 class="font-glamour font-black text-7xl md:text-9xl lg:text-[10rem] text-black leading-none mb-4 tracking-tight">REAGAN</h1>
+            <div class="flex items-center justify-center gap-3 mb-6 flex-wrap">
+                <span class="font-janky text-2xl md:text-4xl text-gold transform rotate-3 font-bold">@</span>
+                <span class="font-glamour font-bold text-4xl md:text-6xl text-hot-pink tracking-widest uppercase border-b-4 border-gold pb-2">JankyGlamour</span>
             </div>
-            
-            <!-- Main Title -->
-            <h1 class="font-glamour font-black text-6xl md:text-8xl lg:text-9xl text-black leading-none mb-6 tracking-tight">
-                REAGAN
-            </h1>
-            
-            <!-- Handle with decorative elements -->
-            <div class="flex items-center justify-center gap-4 mb-8 flex-wrap">
-                <span class="font-janky text-2xl md:text-4xl text-gold transform rotate-3">@</span>
-                <span class="font-glamour font-bold text-4xl md:text-6xl text-hot-pink tracking-widest uppercase border-b-4 border-gold pb-2">
-                    JankyGlamour
-                </span>
-            </div>
-            
-            <!-- Tagline -->
-            <p class="font-janky text-2xl md:text-4xl text-gray-800 mb-4 transform rotate-1">
-                Stripping Down the Patriarchy Since 2010
+            <!-- TAGLINE — always "The Most Wholesome Stripper in Town!" -->
+            <p class="font-janky text-2xl md:text-4xl text-gray-800 mb-6 transform rotate-1 font-medium">
+                The Most Wholesome Stripper in Town!
             </p>
-            
-            <p class="font-inter text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10">
-                Los Angeles-based performer, CalArts graduate, and unapologetic advocate for sex worker rights. 
-                Where high art meets the hustle.
+            <p class="font-inter text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Los Angeles-based performer, labor organizer, and unapologetic advocate for sex worker rights. Where high art meets the hustle.
             </p>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://instagram.com" target="_blank" class="btn-rhinestone px-8 py-4 rounded-full font-glamour font-bold text-black text-lg uppercase tracking-wider hover:scale-105 transition-transform flex items-center gap-2">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                <a href="https://instagram.com/jankyglamour" target="_blank" class="btn-rhinestone px-8 py-4 rounded-full font-glamour font-bold text-black text-lg uppercase tracking-wider flex items-center gap-2">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
                     Follow the Glamour
                 </a>
-                <a href="#about" class="border-4 border-hot-pink text-hot-pink px-8 py-4 rounded-full font-glamour font-bold text-lg uppercase tracking-wider hover:bg-hot-pink hover:text-white transition-all">
-                    Get to Know Me
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="btn-onlyfans px-8 py-4 rounded-full font-bold text-base uppercase tracking-wider flex items-center gap-2">
+                    <span class="text-lg">🔒</span> OnlyFans
+                </a>
+                <a href="https://hidden.com/jankyglamour/" target="_blank" rel="noopener" class="btn-onlyfans px-8 py-4 rounded-full font-bold text-base uppercase tracking-wider flex items-center gap-2">
+                    <span class="text-lg">🤫</span> Hidden.com
                 </a>
             </div>
-            
-            <!-- Decorative Tape -->
-            <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 tape px-6 py-2 font-janky text-gray-800 text-xl rotate-2">
-                14 years in the game 💋
+            <div class="flex items-center justify-center gap-4 mt-10 flex-wrap">
+                <div class="inline-block tape px-6 py-2 font-janky text-gray-800 text-xl rotate-2 rounded-sm">17 years in the game 💋</div>
+                <a href="#about" class="border-2 border-hot-pink text-hot-pink px-5 py-2 rounded-full font-janky font-bold text-xl -rotate-1 inline-block hover:bg-hot-pink hover:text-white transition-all">Get to Know Me ↓</a>
             </div>
         </div>
-        
-        <!-- Floating Polaroids -->
-        <div class="hidden lg:block absolute top-32 left-10 polaroid w-48 animate-pulse">
-            <img src="http://static.photos/fashion/320x240/42" alt="Performance shot" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500">
+
+        <div class="hidden lg:block absolute top-40 left-12 polaroid w-44">
+            <div class="photo-placeholder pink w-full h-32">[ photo ]</div>
         </div>
-        <div class="hidden lg:block absolute bottom-32 right-10 polaroid w-52 animate-pulse" style="animation-delay: 1s;">
-            <img src="http://static.photos/pink/320x240/133" alt="Glamour shot" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="hidden lg:block absolute bottom-40 right-12 polaroid w-48">
+            <div class="photo-placeholder gold w-full h-36">[ photo ]</div>
         </div>
     </section>
 
     <!-- Marquee -->
-    <div class="bg-hot-pink text-white py-4 marquee-container border-y-4 border-gold">
-        <div class="marquee-content font-glamour font-bold text-2xl uppercase tracking-widest">
-            ✦ Sex Worker Rights Are Human Rights ✦ Decriminalize Survival ✦ Art is Labor ✦ 14 Years of Janky Glamour ✦ CalArts MFA ✦ Community First ✦ 
-            ✦ Sex Worker Rights Are Human Rights ✦ Decriminalize Survival ✦ Art is Labor ✦ 14 Years of Janky Glamour ✦ CalArts MFA ✦ Community First ✦
+    <div class="marquee-container">
+        <div class="marquee-content">
+            ✦ The Most Wholesome Stripper in Town! ✦ Since 2007 ✦ Sex Worker Rights Are Human Rights ✦ Decriminalize Survival ✦ Art is Labor ✦ 17 Years of Janky Glamour ✦ 17-0 Union Vote ✦ Actors' Equity ✦ North Hollywood Forever ✦&nbsp;&nbsp;&nbsp;
+            ✦ The Most Wholesome Stripper in Town! ✦ Since 2007 ✦ Sex Worker Rights Are Human Rights ✦ Decriminalize Survival ✦ Art is Labor ✦ 17 Years of Janky Glamour ✦ 17-0 Union Vote ✦ Actors' Equity ✦ North Hollywood Forever ✦&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 relative bg-white">
+    <!-- About -->
+    <section id="about" class="py-24 px-4 relative bg-white">
         <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image Side -->
-                <div class="relative">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative order-2 md:order-1">
                     <div class="absolute -top-4 -left-4 w-full h-full bg-hot-pink/20 rounded-lg transform rotate-3"></div>
                     <div class="absolute -bottom-4 -right-4 w-full h-full bg-gold/20 rounded-lg transform -rotate-3"></div>
-                    <img src="http://static.photos/fashion/640x360/88" alt="Reagan Portrait" class="relative z-10 w-full rounded-lg shadow-2xl filter contrast-125 saturate-150">
-                    
-                    <!-- Floating Note -->
+                    <div class="relative z-10 rounded-lg shadow-2xl overflow-hidden border-4 border-white">
+                        <div class="photo-placeholder pink w-full aspect-[4/5] text-2xl">[ photo ]</div>
+                    </div>
                     <div class="absolute -bottom-6 -right-6 bg-yellow-100 p-4 rounded-lg shadow-lg transform rotate-6 z-20 max-w-xs border-2 border-gold">
-                        <p class="font-janky text-xl text-gray-800">"CalArts MFA, but make it stripper"</p>
+                        <p class="font-janky text-xl text-gray-800 font-semibold">"Women & Gender Studies, but make it Stripper"</p>
                     </div>
                 </div>
-                
-                <!-- Text Side -->
-                <div>
-                    <h2 class="font-glamour font-bold text-5xl md:text-6xl text-black mb-2">
-                        The <span class="scribble-underline text-hot-pink">Janky</span>
-                    </h2>
-                    <h2 class="font-glamour font-bold text-5xl md:text-6xl text-gold mb-6">
-                        & The Glamour
-                    </h2>
-                    
-                    <div class="space-y-4 text-lg text-gray-700 font-inter leading-relaxed">
-                        <p>
-                            <span class="font-janky text-2xl text-hot-pink">14 years on the pole</span> and I'm just getting started. What began as survival became revolution. I'm Reagan—educator, agitator, and your favorite stripper with an MFA from CalArts.
-                        </p>
-                        <p>
-                            My work lives in the tension between the "janky"—the raw, DIY, imperfect reality of sex work—and the "glamour": the rhinestoned, spotlighted, unapologetic performance of femininity that pays my rent and fuels my art.
-                        </p>
-                        <p>
-                            I organize with grassroots collectives fighting for decriminalization, lecture on labor rights in the adult industry, and create performance art that makes museum-goers uncomfortable in the best way possible.
-                        </p>
+                <div class="order-1 md:order-2">
+                    <h2 class="font-glamour font-bold text-5xl md:text-6xl text-black mb-2 leading-tight">The <span class="scribble-underline text-hot-pink">Janky</span></h2>
+                    <h2 class="font-glamour font-bold text-5xl md:text-6xl text-gold mb-8 leading-tight">& The Glamour</h2>
+                    <div class="space-y-5 text-lg text-gray-700 font-inter leading-relaxed">
+                        <p><span class="font-janky text-2xl text-hot-pink font-semibold">17 years on the pole</span> and I'm just getting started. What began as survival became revolution. I'm Reagan — performer, labor organizer, and your favorite stripper with a degree in Women & Gender Studies.</p>
+                        <p>My work lives in the tension between the "janky" — the raw, DIY, imperfect reality of sex work — and the "glamour": the rhinestoned, spotlighted, unapologetic performance of femininity that pays my rent and fuels my art.</p>
+                        <p>I'm a theater performer represented by Actors' Equity Association. I organize with grassroots collectives fighting for decriminalization. And in 2023, I helped make history.</p>
                     </div>
-                    
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t-2 border-hot-pink/20">
-                        <div class="text-center">
-                            <div class="font-glamour font-black text-4xl text-hot-pink">14</div>
-                            <div class="font-janky text-lg text-gray-600">Years Dancing</div>
+                    <div class="grid grid-cols-2 gap-8 mt-10 pt-8 border-t-2 border-hot-pink/20 max-w-md mx-auto">
+                        <div class="text-center group cursor-default">
+                            <div class="font-glamour font-black text-5xl md:text-6xl text-hot-pink group-hover:scale-110 transition-transform">17</div>
+                            <div class="font-janky text-xl text-gray-600 mt-2">Years Dancing</div>
                         </div>
-                        <div class="text-center">
-                            <div class="font-glamour font-black text-4xl text-gold">MFA</div>
-                            <div class="font-janky text-lg text-gray-600">CalArts 2018</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="font-glamour font-black text-4xl text-hot-pink">∞</div>
-                            <div class="font-janky text-lg text-gray-600">Glitter Used</div>
+                        <div class="text-center group cursor-default">
+                            <div class="font-glamour font-black text-5xl md:text-6xl text-gold group-hover:scale-110 transition-transform">17-0</div>
+                            <div class="font-janky text-xl text-gray-600 mt-2">Union Vote Win</div>
                         </div>
                     </div>
                 </div>
@@ -382,212 +246,283 @@
         </div>
     </section>
 
-    <!-- Activism Section -->
-    <section id="activism" class="py-20 px-4 bg-hot-pink text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"></div>
-        </div>
-        
+    <!-- Star Garden -->
+    <section id="star-garden" class="section-dark py-24 px-4 relative">
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="font-glamour font-bold text-5xl md:text-7xl text-center mb-4">
-                More Than <span class="text-gold">Glitter</span>
-            </h2>
-            <p class="font-janky text-2xl text-center mb-16 text-white/90">
-                organizing, advocating, agitating
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white text-black p-8 rounded-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300 shadow-2xl border-4 border-gold">
-                    <div class="w-16 h-16 bg-hot-pink rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="megaphone" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Decrim NOW</h3>
-                    <p class="font-inter text-gray-700 leading-relaxed">
-                        Fighting for the full decriminalization (not just legalization) of sex work. No more carceral feminism. No more cops in our bedrooms or our workplaces.
-                    </p>
+            <div class="text-center mb-16">
+                <h2 class="font-glamour font-bold text-5xl md:text-7xl text-gold mb-4">The Fight That Changed Everything</h2>
+                <p class="font-janky text-2xl md:text-3xl text-blush-pink max-w-3xl mx-auto leading-relaxed">"We do want to dance. We love it in there. We're fighting for safer working conditions."</p>
+            </div>
+            <div class="max-w-4xl mx-auto mb-16">
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6 font-inter">In 2022, Reagan and her fellow dancers at <span class="text-gold font-semibold">Star Garden Topless Dive Bar</span> in North Hollywood did something no strippers had ever done — they organized. After being fired for speaking up about unsafe conditions, they took their show to the sidewalk: picketing in costume, running runway shows outside the club, and building a movement that caught the attention of the entire labor world.</p>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-inter">Fifteen months later, in May 2023, they won — a unanimous <span class="text-hot-pink font-bold font-glamour text-2xl">17-0</span> vote. The Star Garden dancers became the only unionized strippers in the United States, represented by Actors' Equity Association.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="zine-card p-6 md:p-8 rounded-sm">
+                    <div class="mb-4"><i data-lucide="quote" class="w-8 h-8 text-hot-pink"></i></div>
+                    <p class="font-glamour text-xl md:text-2xl text-black leading-snug mb-6">"This is such a powerful victory for the narrative of sex work in this country."</p>
+                    <div class="flex items-center gap-2 text-sm text-gray-600 font-inter uppercase tracking-wider"><span class="w-8 h-px bg-gold"></span>Rolling Stone, 2023</div>
                 </div>
-                
-                <!-- Card 2 -->
-                <div class="bg-white text-black p-8 rounded-lg transform rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl border-4 border-gold mt-8 md:mt-0">
-                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Sex Work 101</h3>
-                    <p class="font-inter text-gray-700 leading-relaxed">
-                        Educational workshops for universities, art institutions, and community groups. Destigmatizing the oldest profession through radical transparency and academic rigor.
-                    </p>
+                <div class="zine-card p-6 md:p-8 rounded-sm">
+                    <div class="mb-4"><i data-lucide="quote" class="w-8 h-8 text-gold"></i></div>
+                    <p class="font-glamour text-xl md:text-2xl text-black leading-snug mb-6">"We put everything we have into this campaign."</p>
+                    <div class="flex items-center gap-2 text-sm text-gray-600 font-inter uppercase tracking-wider"><span class="w-8 h-px bg-hot-pink"></span>LAist, 2023</div>
                 </div>
-                
-                <!-- Card 3 -->
-                <div class="bg-white text-black p-8 rounded-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-2xl border-4 border-gold">
-                    <div class="w-16 h-16 bg-hot-pink rounded-full flex items-center justify-center mb-4">
-                        <i data-lucide="heart-handshake" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Mutual Aid</h3>
-                    <p class="font-inter text-gray-700 leading-relaxed">
-                        Direct action fundraising for struggling workers, bail funds for stings, and emergency resources. Community care is how we survive when the state fails us.
-                    </p>
+                <div class="zine-card p-6 md:p-8 rounded-sm">
+                    <div class="mb-4"><i data-lucide="quote" class="w-8 h-8 text-hot-pink"></i></div>
+                    <p class="font-glamour text-xl md:text-2xl text-black leading-snug mb-6">"It felt really dangerous. Something had to be done — and fast."</p>
+                    <div class="flex items-center gap-2 text-sm text-gray-600 font-inter uppercase tracking-wider"><span class="w-8 h-px bg-gold"></span>The Nation, 2022</div>
                 </div>
             </div>
-            
             <div class="mt-16 text-center">
-                <div class="inline-block bg-white text-black p-6 rounded-lg border-4 border-gold transform rotate-2">
-                    <p class="font-janky text-2xl mb-2">"Nothing about us without us"</p>
+                <div class="inline-block bg-hot-pink/20 border-2 border-gold px-8 py-4 rounded-full hover:scale-105 transition-transform cursor-default">
+                    <p class="font-glamour text-2xl md:text-3xl text-gold font-bold">✦ The Only Unionized Strippers in America ✦</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press -->
+    <section id="press" class="py-24 px-4 bg-champagne relative">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-glamour font-bold text-5xl md:text-6xl text-center mb-2 text-black">As Seen In</h2>
+            <p class="font-janky text-2xl text-center mb-12 text-gray-700">the revolution will be televised (and written about)</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://www.rollingstone.com/culture/culture-features/star-garden-strippers-union-1234736937/" target="_blank" class="press-card p-6 rounded-lg block group">
+                    <h3 class="font-glamour font-bold text-3xl text-hot-pink mb-2 group-hover:text-gold transition-colors">Rolling Stone</h3>
+                    <p class="font-inter text-gray-700 text-sm mb-4">"Strippers at Star Garden Win Union Vote"</p>
+                    <div class="flex items-center text-hot-pink font-inter text-sm font-semibold uppercase tracking-wider">Read Article <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></div>
+                </a>
+                <a href="https://www.npr.org/2022/09/12/1120759940/star-garden-stripper-topless-dancers-union-striking-los-angeles-california" target="_blank" class="press-card p-6 rounded-lg block group transform rotate-1 hover:rotate-0">
+                    <h3 class="font-glamour font-bold text-3xl text-gold mb-2 group-hover:text-hot-pink transition-colors">NPR</h3>
+                    <p class="font-inter text-gray-700 text-sm mb-4">"Strippers at a North Hollywood Club Are on Strike"</p>
+                    <div class="flex items-center text-gold font-inter text-sm font-semibold uppercase tracking-wider">Read Article <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></div>
+                </a>
+                <a href="https://laist.com/news/arts-and-entertainment/strippers-win-effort-to-form-union-at-north-hollywoods-star-garden-topless-dive-bar" target="_blank" class="press-card p-6 rounded-lg block group transform -rotate-1 hover:rotate-0">
+                    <h3 class="font-glamour font-bold text-3xl text-hot-pink mb-2 group-hover:text-gold transition-colors">LAist</h3>
+                    <p class="font-inter text-gray-700 text-sm mb-4">"Strippers Win Effort to Form Union at Star Garden"</p>
+                    <div class="flex items-center text-hot-pink font-inter text-sm font-semibold uppercase tracking-wider">Read Article <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></div>
+                </a>
+                <a href="https://www.thenation.com/article/activism/strippers-labor-union-la/" target="_blank" class="press-card p-6 rounded-lg block group transform rotate-1 hover:rotate-0">
+                    <h3 class="font-glamour font-bold text-3xl text-gold mb-2 group-hover:text-hot-pink transition-colors">The Nation</h3>
+                    <p class="font-inter text-gray-700 text-sm mb-4">"The Strippers Are Unionizing"</p>
+                    <div class="flex items-center text-gold font-inter text-sm font-semibold uppercase tracking-wider">Read Article <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></div>
+                </a>
+                <a href="https://jacobin.com/2023/02/strippers-union-organizing-drive-star-garden-los-angeles" target="_blank" class="press-card p-6 rounded-lg block group md:col-span-2 lg:col-span-1">
+                    <h3 class="font-glamour font-bold text-3xl text-hot-pink mb-2 group-hover:text-gold transition-colors">Jacobin</h3>
+                    <p class="font-inter text-gray-700 text-sm mb-4">"Star Garden Strippers Are Fighting to Unionize"</p>
+                    <div class="flex items-center text-hot-pink font-inter text-sm font-semibold uppercase tracking-wider">Read Article <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activism -->
+    <section id="activism" class="py-24 px-4 bg-hot-pink text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5"><div class="w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"></div></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="font-glamour font-bold text-5xl md:text-7xl text-center mb-4">More Than <span class="text-gold">Glitter</span></h2>
+            <p class="font-janky text-2xl text-center mb-16 text-white/90">organizing, advocating, agitating</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white text-black p-8 rounded-lg transform -rotate-1 hover:rotate-0 transition-all duration-300 shadow-2xl border-4 border-gold">
+                    <div class="w-16 h-16 bg-hot-pink rounded-full flex items-center justify-center mb-4 shadow-lg"><i data-lucide="megaphone" class="w-8 h-8 text-white"></i></div>
+                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Decrim NOW</h3>
+                    <p class="font-inter text-gray-700 leading-relaxed">Fighting for the full decriminalization (not just legalization) of sex work. No more carceral feminism. No more cops in our bedrooms or our workplaces.</p>
+                </div>
+                <div class="bg-white text-black p-8 rounded-lg transform rotate-2 hover:rotate-0 transition-all duration-300 shadow-2xl border-4 border-gold mt-8 md:mt-0">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-4 shadow-lg"><i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i></div>
+                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Sex Work 101</h3>
+                    <p class="font-inter text-gray-700 leading-relaxed">Educational workshops for universities, art institutions, and community groups. Destigmatizing the oldest profession through radical transparency and academic rigor.</p>
+                </div>
+                <div class="bg-white text-black p-8 rounded-lg transform -rotate-2 hover:rotate-0 transition-all duration-300 shadow-2xl border-4 border-gold">
+                    <div class="w-16 h-16 bg-hot-pink rounded-full flex items-center justify-center mb-4 shadow-lg"><i data-lucide="heart-handshake" class="w-8 h-8 text-white"></i></div>
+                    <h3 class="font-glamour font-bold text-2xl mb-3 text-hot-pink">Mutual Aid</h3>
+                    <p class="font-inter text-gray-700 leading-relaxed">Direct action fundraising for struggling workers, bail funds for stings, and emergency resources. Community care is how we survive when the state fails us.</p>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <div class="inline-block bg-white text-black p-6 rounded-lg border-4 border-gold transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
+                    <p class="font-janky text-2xl mb-2 font-semibold">"Nothing about us without us"</p>
                     <p class="font-inter text-sm uppercase tracking-widest text-gray-600">— Sex Worker Rights Movement</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery/Portfolio -->
-    <section id="gallery" class="py-20 px-4 bg-champagne">
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-glamour font-bold text-5xl md:text-6xl text-center mb-2 text-black">
-                Visual <span class="text-hot-pink">Noise</span>
-            </h2>
-            <p class="font-janky text-2xl text-center mb-12 text-gray-700">
-                performances, pole work, protests, and glamour shots
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <div class="polaroid">
-                    <img src="http://static.photos/fashion/320x240/1" alt="Performance 1" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Opening Night 2023</p>
-                </div>
-                <div class="polaroid mt-8 md:mt-0">
-                    <img src="http://static.photos/pink/320x240/2" alt="Performance 2" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">The Pole is Political</p>
-                </div>
-                <div class="polaroid">
-                    <img src="http://static.photos/fashion/320x240/3" alt="Performance 3" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Rhinestone Protest</p>
-                </div>
-                <div class="polaroid mt-8 md:mt-12">
-                    <img src="http://static.photos/technology/320x240/4" alt="Performance 4" class="w-full h-48 object-cover grayscale">
-                    <p class="font-janky text-center mt-2 text-gray-600">Digital Labor</p>
-                </div>
-                <div class="polaroid md:-mt-8">
-                    <img src="http://static.photos/nature/320x240/5" alt="Performance 5" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Desert Shoot</p>
-                </div>
-                <div class="polaroid">
-                    <img src="http://static.photos/fashion/320x240/6" alt="Performance 6" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Museum Takeover</p>
-                </div>
-                <div class="polaroid md:-mt-8">
-                    <img src="http://static.photos/indoor/320x240/7" alt="Performance 7" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Backstage</p>
-                </div>
-                <div class="polaroid">
-                    <img src="http://static.photos/fashion/320x240/8" alt="Performance 8" class="w-full h-48 object-cover">
-                    <p class="font-janky text-center mt-2 text-gray-600">Gold Rush</p>
-                </div>
+            <h2 class="font-glamour font-bold text-5xl md:text-6xl text-center mb-2 text-black">Visual <span class="text-hot-pink">Noise</span></h2>
+            <p class="font-janky text-2xl text-center mb-12 text-gray-700">performances, pole work, protests, and glamour shots</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="polaroid"><div class="photo-placeholder pink w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Opening Night 2023</p></div>
+                <div class="polaroid mt-6 md:mt-0"><div class="photo-placeholder gold w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">The Pole is Political</p></div>
+                <div class="polaroid"><div class="photo-placeholder blush w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Rhinestone Protest</p></div>
+                <div class="polaroid mt-6 md:mt-8"><div class="photo-placeholder pink w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Digital Labor</p></div>
+                <div class="polaroid md:-mt-6"><div class="photo-placeholder gold w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Desert Shoot</p></div>
+                <div class="polaroid"><div class="photo-placeholder pink w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Museum Takeover</p></div>
+                <div class="polaroid md:-mt-6"><div class="photo-placeholder blush w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Backstage</p></div>
+                <div class="polaroid"><div class="photo-placeholder gold w-full">[ photo ]</div><p class="font-janky text-center mt-2 text-gray-600 text-sm">Gold Rush</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact/Press -->
-    <section id="contact" class="py-20 px-4 bg-white relative">
+    <!-- OnlyFans Section -->
+    <section id="onlyfans" class="relative py-24 px-4 overflow-hidden" style="background: radial-gradient(ellipse at center, rgba(255,20,147,0.15) 0%, #0a0a0a 50%, #0a0a0a 100%); border-top: 4px solid #D4AF37; border-bottom: 4px solid #D4AF37;">
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-6"><span class="font-janky text-3xl md:text-4xl text-gold inline-block transform -rotate-2">okay but the real show is over here...</span></div>
+            <h2 class="font-glamour font-bold text-5xl md:text-7xl text-center text-white mb-6">The Full <span class="text-hot-pink">Glamour</span></h2>
+            <p class="font-inter text-lg md:text-xl text-gray-300 text-center max-w-2xl mx-auto mb-12 leading-relaxed">Everything on the website is the highlight reel. OnlyFans is where the real Janky Glamour lives — unfiltered, uncensored, and worth every penny.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto mt-16 mb-12">
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="polaroid block group cursor-pointer transform -rotate-2 hover:rotate-0 transition-all duration-300">
+                    <div class="photo-placeholder pink w-full relative overflow-hidden">
+                        <div class="absolute inset-x-0 bottom-0 h-[60%] backdrop-blur-[8px] group-hover:backdrop-blur-[4px] transition-all duration-300 bg-white/10 flex flex-col items-center justify-center">
+                            <i data-lucide="lock" class="w-8 h-8 text-gold mb-1"></i>
+                            <span class="font-janky text-sm text-white">🔒 OnlyFans exclusive</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="polaroid block group cursor-pointer transform rotate-1 hover:rotate-0 transition-all duration-300">
+                    <div class="photo-placeholder gold w-full relative overflow-hidden">
+                        <div class="absolute inset-x-0 bottom-0 h-[60%] backdrop-blur-[8px] group-hover:backdrop-blur-[4px] transition-all duration-300 bg-white/10 flex flex-col items-center justify-center">
+                            <i data-lucide="lock" class="w-8 h-8 text-hot-pink mb-1"></i>
+                            <span class="font-janky text-sm text-black/80">🔒 OnlyFans exclusive</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="polaroid block group cursor-pointer transform -rotate-1 hover:rotate-0 transition-all duration-300 hidden md:block">
+                    <div class="photo-placeholder blush w-full relative overflow-hidden">
+                        <div class="absolute inset-x-0 bottom-0 h-[60%] backdrop-blur-[8px] group-hover:backdrop-blur-[4px] transition-all duration-300 bg-white/10 flex flex-col items-center justify-center">
+                            <i data-lucide="lock" class="w-8 h-8 text-gold mb-1"></i>
+                            <span class="font-janky text-sm text-black/80">🔒 OnlyFans exclusive</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="btn-rhinestone inline-block px-12 py-6 rounded-full font-glamour font-bold text-black text-xl md:text-2xl uppercase tracking-wider hover:scale-105 transition-transform shadow-2xl">
+                    <span class="mr-2">🔒</span> Unlock The Full Show
+                </a>
+                <p class="font-janky text-xl text-gold mt-4 transform rotate-1">your favorite stripper made it easy for you 💅</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-4 bg-champagne relative">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-glamour font-bold text-5xl md:text-6xl mb-8">
-                Book the <span class="text-hot-pink">Janky</span> <span class="text-gold">Glamour</span>
-            </h2>
-            
-            <div class="bg-champagne p-8 md:p-12 rounded-2xl border-4 border-hot-pink shadow-2xl relative">
-                <!-- Decorative Tape -->
-                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 tape px-8 py-2 font-janky text-xl">
-                    Let's work together!
-                </div>
-                
-                <p class="font-inter text-lg text-gray-700 mb-8">
-                    Available for: <span class="font-janky text-2xl text-hot-pink">Performances</span> • 
-                    <span class="font-janky text-2xl text-hot-pink">Speaking Gigs</span> • 
-                    <span class="font-janky text-2xl text-hot-pink">Consulting</span> • 
-                    <span class="font-janky text-2xl text-hot-pink">Collaborations</span>
+            <h2 class="font-glamour font-bold text-5xl md:text-6xl mb-8">Book the <span class="text-hot-pink">Janky</span> <span class="text-gold">Glamour</span></h2>
+            <div class="bg-white p-8 md:p-12 rounded-2xl border-4 border-hot-pink shadow-2xl relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 tape px-8 py-2 font-janky text-xl rounded-sm">Let's work together!</div>
+                <p class="font-inter text-lg text-gray-700 mb-8 leading-relaxed">
+                    Available for: <span class="font-janky text-2xl text-hot-pink mx-1">Performances</span> • 
+                    <span class="font-janky text-2xl text-hot-pink mx-1">Speaking & Lectures</span> • 
+                    <span class="font-janky text-2xl text-hot-pink mx-1">Press & Media</span> • 
+                    <span class="font-janky text-2xl text-hot-pink mx-1">Brand Collaborations</span> • 
+                    <span class="font-janky text-2xl text-hot-pink mx-1">OnlyFans Collabs</span>
                 </p>
-                
-                <a href="mailto:hello@jankyglamour.com" class="btn-rhinestone inline-block px-10 py-5 rounded-full font-glamour font-bold text-black text-xl uppercase tracking-wider hover:scale-105 transition-transform mb-8">
+                <!-- Button displays hello@jankyglamour.com but mailto goes to Gmail -->
+                <a href="mailto:jankyglamour@gmail.com" class="btn-rhinestone inline-block px-10 py-5 rounded-full font-glamour font-bold text-black text-xl uppercase tracking-wider hover:scale-105 transition-transform mb-8">
                     <i data-lucide="mail" class="w-6 h-6 inline mr-2"></i>
                     hello@jankyglamour.com
                 </a>
-                
-                <div class="flex justify-center gap-6 mt-8">
-                    <a href="#" class="w-12 h-12 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors">
+                <div class="flex justify-center gap-4 mt-8 flex-wrap">
+                    <a href="https://instagram.com/jankyglamour" target="_blank" class="w-12 h-12 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors shadow-lg" aria-label="Instagram">
                         <i data-lucide="instagram" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors">
-                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="h-12 px-4 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors shadow-lg font-semibold text-sm uppercase tracking-wider" aria-label="OnlyFans">
+                        <span class="mr-1">🔒</span> OnlyFans
                     </a>
-                    <a href="#" class="w-12 h-12 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors">
-                        <i data-lucide="youtube" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors">
-                        <i data-lucide="bookmark" class="w-6 h-6"></i>
+                    <a href="https://hidden.com/jankyglamour/" target="_blank" rel="noopener" class="h-12 px-4 bg-hot-pink rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors shadow-lg font-semibold text-sm uppercase tracking-wider" aria-label="Hidden">
+                        <span class="mr-1">🤫</span> Hidden.com
                     </a>
                 </div>
             </div>
-            
-            <p class="mt-12 font-janky text-2xl text-gray-600">
-                Based in Los Angeles • Available Worldwide ✈️
-            </p>
+            <p class="mt-12 font-janky text-2xl text-gray-600">Based in Los Angeles • Available Worldwide ✈️</p>
         </div>
     </section>
 
+    <!-- Sticky Floating OnlyFans Button — items-center, no translate-x, whitespace-nowrap -->
+    <div id="stickyOFBtn" class="fixed bottom-6 right-6 z-50 flex flex-col items-center pointer-events-none">
+        <span class="font-janky text-gold text-sm mb-1 transform rotate-3 pointer-events-auto whitespace-nowrap">shhh, the good stuff →</span>
+        <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="pointer-events-auto bg-hot-pink border-2 border-gold text-white px-4 py-3 md:px-5 md:py-3 rounded-full font-semibold text-sm md:text-base uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 animate-pulse-subtle hover:animate-none hover:scale-105">
+            <span>🔒</span>
+            <span class="hidden sm:inline">OnlyFans</span>
+            <span class="sm:hidden">OF</span>
+        </a>
+    </div>
+
+    <!-- Exit Intent Overlay -->
+    <div id="exitOverlay" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" style="background: rgba(0,0,0,0.85);">
+        <div class="bg-white border-4 border-gold p-8 md:p-12 rounded-lg max-w-lg w-full relative transform -rotate-1 shadow-2xl animate-fade-in">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 tape px-6 py-1 rounded-sm">
+                <span class="font-janky text-gray-700 text-lg">don't go!</span>
+            </div>
+            <button onclick="closeExitOverlay()" class="absolute top-4 right-4 text-gray-400 hover:text-hot-pink transition-colors" aria-label="Close">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <p class="font-janky text-3xl md:text-4xl text-hot-pink mb-4 transform -rotate-1">wait, you're leaving?</p>
+            <h3 class="font-glamour text-2xl md:text-3xl text-black mb-4">The good stuff isn't on this page.</h3>
+            <p class="font-inter text-gray-600 mb-8 leading-relaxed">Support a sex worker directly. No algorithm. No middleman. Just the full Janky Glamour experience.</p>
+            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="btn-rhinestone px-8 py-4 rounded-full font-glamour font-bold text-black uppercase tracking-wider text-center w-full sm:w-auto hover:scale-105 transition-transform">
+                    Take me to OnlyFans 🔒
+                </a>
+                <button onclick="closeExitOverlay()" class="text-hot-pink font-inter text-sm font-semibold uppercase tracking-wider hover:underline">no thanks, I'll stay here</button>
+            </div>
+            <p class="font-janky text-gray-400 text-center mt-6 text-sm">(you can always come back 💋)</p>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 px-4 border-t-8 border-gold">
+    <footer id="footer" class="bg-black text-white py-12 px-4 border-t-8 border-gold">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <h3 class="font-glamour font-bold text-3xl text-hot-pink mb-2">JANKYGLAMOUR</h3>
-                <p class="font-janky text-xl text-gray-400">Stripping down since 2010</p>
+                <p class="font-janky text-xl text-gray-400">Stripping down since 2007</p>
             </div>
-            
-            <div class="flex gap-8 font-inter text-sm uppercase tracking-widest">
-                <a href="#" class="hover:text-hot-pink transition-colors">Privacy</a>
-                <a href="#" class="hover:text-hot-pink transition-colors">Terms</a>
-                <a href="#" class="hover:text-hot-pink transition-colors">Press Kit</a>
+            <div class="flex gap-4 items-center flex-wrap justify-center">
+                <a href="https://instagram.com/jankyglamour" target="_blank" class="w-10 h-10 rounded-full bg-hot-pink flex items-center justify-center hover:bg-gold transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="https://jankyglamour.com/onlyfans" target="_blank" rel="noopener" class="h-10 px-4 rounded-full bg-hot-pink flex items-center justify-center hover:bg-gold transition-colors text-sm font-semibold uppercase tracking-wider">
+                    <span class="mr-1">🔒</span> OnlyFans
+                </a>
+                <a href="https://hidden.com/jankyglamour/" target="_blank" rel="noopener" class="h-10 px-4 rounded-full bg-hot-pink flex items-center justify-center hover:bg-gold transition-colors text-sm font-semibold uppercase tracking-wider">
+                    <span class="mr-1">🤫</span> Hidden
+                </a>
             </div>
-            
             <div class="text-center md:text-right">
-                <p class="font-janky text-lg text-gray-500">© 2024 Reagan / @JankyGlamour</p>
-                <p class="text-xs text-gray-600 mt-1">Sex Worker Rights Are Human Rights</p>
+                <p class="font-janky text-lg text-gray-500">© <span id="year">2024</span> Reagan / @JankyGlamour</p>
+                <p class="text-xs text-gray-600 mt-1 font-inter uppercase tracking-widest">Sex Worker Rights Are Human Rights</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-        
-        // Mobile Menu Toggle
+
         function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobileMenu').classList.toggle('hidden');
         }
-        
-        // Smooth Scroll
+
+        // Smooth scroll — skips any link that has an onclick
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
+                if (this.hasAttribute('onclick')) return;
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     document.getElementById('mobileMenu').classList.add('hidden');
                 }
             });
         });
-        
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll fade-in observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -595,25 +530,96 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
-        
-        // Observe elements for fade-in
-        document.querySelectorAll('.polaroid, .bg-white').forEach(el => {
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.zine-card, .press-card, .bg-white').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
+            el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
-        
-        // Random Glitter Movement
+
+        // Glitter ambient movement
         setInterval(() => {
-            const glitters = document.querySelectorAll('.glitter');
-            glitters.forEach(g => {
-                const randomX = Math.random() * 10 - 5;
-                const randomY = Math.random() * 10 - 5;
-                g.style.transform = `translate(${randomX}px, ${randomY}px) scale(${1 + Math.random() * 0.2})`;
+            document.querySelectorAll('.glitter').forEach(g => {
+                g.style.transform = `translate(${Math.random()*10-5}px, ${Math.random()*10-5}px) scale(${1+Math.random()*0.2})`;
             });
         }, 3000);
+
+        // Glitter explosion on click
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            const colors = ['#FF1493','#FFD700','#D4AF37','#FFC0CB'];
+            const shapes = ['✦','✧','★','☆','✨'];
+            for (let i = 0; i < 6; i++) {
+                const g = document.createElement('div');
+                g.textContent = shapes[Math.floor(Math.random()*shapes.length)];
+                g.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;color:${colors[Math.floor(Math.random()*colors.length)]};font-size:${Math.random()*20+10}px;pointer-events:none;z-index:9999;transition:all 0.8s ease-out`;
+                document.body.appendChild(g);
+                setTimeout(() => {
+                    const angle = (Math.PI*2*i)/6;
+                    g.style.transform = `translate(${Math.cos(angle)*80}px,${Math.sin(angle)*80}px) scale(0)`;
+                    g.style.opacity = '0';
+                }, 10);
+                setTimeout(() => g.remove(), 800);
+            }
+        });
+
+        // Parallax — skips BOTH #onlyfans and #gallery sections
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.polaroid').forEach((el, i) => {
+                if (el.closest('#onlyfans')) return;
+                if (el.closest('#gallery')) return;
+                const yPos = scrolled * 0.02 * (i % 2 === 0 ? 1 : -1);
+                if (!el.style.transform.includes('rotate')) {
+                    el.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+        });
+
+        // Sticky button hides when footer comes into view
+        const stickyBtn = document.getElementById('stickyOFBtn');
+        const stickyLink = stickyBtn.querySelector('a');
+        const footer = document.getElementById('footer');
+        function updateStickyBtn() {
+            const footerTop = footer.getBoundingClientRect().top;
+            if (footerTop < window.innerHeight) {
+                stickyBtn.style.opacity = '0';
+                stickyBtn.style.pointerEvents = 'none';
+                stickyBtn.style.transform = 'translateY(20px)';
+                stickyLink.style.pointerEvents = 'none';
+            } else {
+                stickyBtn.style.opacity = '1';
+                stickyBtn.style.pointerEvents = 'auto';
+                stickyBtn.style.transform = 'translateY(0)';
+                stickyLink.style.pointerEvents = 'auto';
+            }
+        }
+        window.addEventListener('scroll', updateStickyBtn);
+        updateStickyBtn();
+
+        // Exit intent overlay
+        let exitIntentShown = false;
+        const overlay = document.getElementById('exitOverlay');
+
+        function showExitOverlay() {
+            if (exitIntentShown || sessionStorage.getItem('exitIntentShown')) return;
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            exitIntentShown = true;
+            sessionStorage.setItem('exitIntentShown', 'true');
+            lucide.createIcons();
+        }
+
+        function closeExitOverlay() {
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+        }
+
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeExitOverlay(); });
+        document.addEventListener('mouseleave', (e) => { if (e.clientY < 10 && !exitIntentShown) setTimeout(showExitOverlay, 100); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !overlay.classList.contains('hidden')) closeExitOverlay(); });
     </script>
 </body>
 </html>
